@@ -457,6 +457,14 @@ class GloFAS_grid:
             else:
                 print('skip river plume cleaning')
 
+            #Add smoothing step to avoid discontinuities:
+            ocean_weight_grid=np.reshape(ocean_weight,(jdm,idm))
+            smoothed_ocean_weight = gaussian_filter(ocean_weight_grid, sigma=3)
+
+            smoothed_ocean_weight[depth_grid.depth.mask.reshape((jdm, idm))]=0 #delete weights on land points
+
+            ocean_weight=smoothed_ocean_weight.flatten() #And back to flat array
+            
             #Normalize the weights:
             sum_weight=np.nansum(ocean_weight)
             ocean_weight=ocean_weight/sum_weight
