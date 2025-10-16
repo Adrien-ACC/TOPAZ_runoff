@@ -13,6 +13,7 @@ import skimage as ski
 # import matplotlib as mpl
 # mpl.use('TkAgg')
 import warnings
+from scipy.ndimage import gaussian_filter #Import gausian_filter function
 
 class GloFAS_grid:
     """ Class containing the GloFAS data grid as a Xarray dataset """
