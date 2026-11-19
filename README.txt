@@ -10,3 +10,7 @@ Here is a quick rundown of the folders you will find here:
 - "outputs" contains examples of output files from the program to edit the estuary position
 
 Finally, you may want to have a look at the technical documentation named 'river_forcing_documentation.pdf"
+
+
+
+For any question, contact me at: adrien.acchiardi@gmail.com
